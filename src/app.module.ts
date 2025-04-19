@@ -3,7 +3,6 @@ import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
 
 import { DatabaseModule } from './common/database/database.module';
-import { TokenModule } from './common/token/token.module';
 
 @Module({
   imports: [
@@ -16,7 +15,6 @@ import { TokenModule } from './common/token/token.module';
       }),
     }),
     DatabaseModule,
-    TokenModule,
   ],
 })
 export class AppModule {}
