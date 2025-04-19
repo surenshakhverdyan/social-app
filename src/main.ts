@@ -1,8 +1,21 @@
 import { NestFactory } from '@nestjs/core';
+import { ConfigService } from '@nestjs/config';
+import { ValidationPipe } from '@nestjs/common';
+
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 3000);
+  const configService = app.get<ConfigService>(ConfigService);
+  app.setGlobalPrefix('api');
+  app.enableCors({
+    origin: configService.get<string>('CORS_ORIGIN'),
+  });
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+    }),
+  );
+  await app.listen(configService.get<string>('PORT') ?? 3000);
 }
-bootstrap();
+void bootstrap();
