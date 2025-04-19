@@ -4,6 +4,7 @@ import * as Joi from 'joi';
 
 import { DatabaseModule } from './common/database/database.module';
 import { TokenModule } from './common/token/token.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { TokenModule } from './common/token/token.module';
     }),
     DatabaseModule,
     TokenModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
