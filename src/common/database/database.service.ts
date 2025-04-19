@@ -21,7 +21,7 @@ export class DatabaseService {
     });
   }
 
-  async query<T extends QueryResultRow = QueryResultRow>(
+  async query<T extends QueryResultRow>(
     query: string,
     params?: any[],
   ): Promise<QueryResult<T>> {
