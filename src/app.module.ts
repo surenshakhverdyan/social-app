@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
 
+import { DatabaseModule } from './common/database/database.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -12,6 +14,7 @@ import * as Joi from 'joi';
         DB_PORT: Joi.number().integer().required().default(5432),
       }),
     }),
+    DatabaseModule,
   ],
 })
 export class AppModule {}
