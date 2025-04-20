@@ -5,6 +5,7 @@ import * as Joi from 'joi';
 import { DatabaseModule } from './common/database/database.module';
 import { TokenModule } from './common/token/token.module';
 import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { AuthModule } from './auth/auth.module';
     DatabaseModule,
     TokenModule,
     AuthModule,
+    UserModule,
   ],
 })
 export class AppModule {}

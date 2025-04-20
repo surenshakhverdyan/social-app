@@ -4,7 +4,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 
-import { TokenService } from 'src/common/token/token.service';
+import { TokenService } from '../common/token/token.service';
 import { AuthHelper } from './helpers/auth.helper';
 import { UserRepository } from './repositories/user.repository';
 import { SignUpDto } from './dtos/sign-up.dto';

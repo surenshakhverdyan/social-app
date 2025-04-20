@@ -1,6 +1,6 @@
 import { HttpException, Injectable } from '@nestjs/common';
 
-import { DatabaseService } from 'src/common/database/database.service';
+import { DatabaseService } from '../../common/database/database.service';
 import { SignUpDto } from '../dtos/sign-up.dto';
 import { User } from '../schemas/user.schema';
 
@@ -21,9 +21,9 @@ export class UserRepository {
         error.message.includes('duplicate key value')
       ) {
         throw new HttpException('Email already exists', 409);
-      } else {
-        throw new HttpException('Failed to create user', 500);
       }
+
+      throw new HttpException('Failed to create user', 500);
     }
   }
 
