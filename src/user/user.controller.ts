@@ -55,6 +55,11 @@ export class UserController {
     name: 'receiverId',
     description: 'ID of the user to send request to',
   })
+  @ApiParam({
+    name: 'senderId',
+    description: 'ID of the user sending the request',
+    required: true,
+  })
   @Post(':receiverId/friend-request')
   sendFriendRequest(
     @Param('receiverId') receiverId: string,

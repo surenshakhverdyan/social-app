@@ -72,12 +72,14 @@ CREATE TABLE friendship_requests (
 ## Project Setup
 
 1. Clone the repository
-2. Install dependencies:
+2. Install dependencies
+3. Build
 ```bash
 npm install
+npm run build
 ```
 
-3. Create a .env file based on .env.example:
+4. Create a .env file based on .env.example:
 ```env
 CORS_ORIGIN=http://localhost:3000
 PORT=3000
@@ -92,13 +94,13 @@ DB_PASS=your-password
 DB_NAME=social_app
 ```
 
-4. Run the database migrations:
+5. Run the database migrations:
 ```bash
 # The migrations will run automatically when the application starts
 npm run start
 ```
 
-5. Start the development server:
+6. Start the development server:
 ```bash
 npm run start:dev
 ```
