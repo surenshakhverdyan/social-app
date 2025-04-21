@@ -141,4 +141,8 @@ The project follows a clean, modular architecture:
 
 ## License
 
+## Api endpoints
+
+- http://host:port/docs
+
 [MIT licensed](LICENSE)
